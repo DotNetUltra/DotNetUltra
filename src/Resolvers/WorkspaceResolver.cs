@@ -1,15 +1,15 @@
-﻿using DotNetUltra.Services.Abstractions;
+﻿using DotNetUltra.Resolvers.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DotNetUltra.Services;
+namespace DotNetUltra.Resolvers;
 
-internal sealed class WorkspaceService : IWorkspaceService
+internal class WorkspaceResolver : IWorkspaceResolver
 {
     private readonly string _currentDirectory;
 
-    public WorkspaceService()
+    public WorkspaceResolver()
     {
         _currentDirectory = Environment.CurrentDirectory;
     }

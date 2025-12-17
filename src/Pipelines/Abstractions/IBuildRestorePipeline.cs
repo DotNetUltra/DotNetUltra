@@ -4,6 +4,6 @@ using System.Text;
 
 namespace DotNetUltra.Pipelines.Abstractions;
 
-internal interface IBuildCleanPipeline : IPipeline
+internal interface IBuildRestorePipeline : IPipeline
 {
 }

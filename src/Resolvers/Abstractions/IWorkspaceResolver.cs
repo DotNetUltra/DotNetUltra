@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DotNetUltra.Services.Abstractions;
+namespace DotNetUltra.Resolvers.Abstractions;
 
-internal interface IWorkspaceService
+internal interface IWorkspaceResolver
 {
     DirectoryInfo GetWorkingDirectory();
     public bool IsProjectDirectory();

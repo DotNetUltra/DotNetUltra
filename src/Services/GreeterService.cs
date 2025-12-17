@@ -1,14 +1,15 @@
-﻿using DotNetUltra.Services.Abstractions;
+﻿using DotNetUltra.Resolvers.Abstractions;
+using DotNetUltra.Services.Abstractions;
 using Spectre.Console;
 using System.Reflection;
 
 namespace DotNetUltra.Services;
 
-internal sealed class GreeterService(IWorkspaceService workspaceService) : IGreeterService
+internal sealed class GreeterService(IWorkspaceResolver workspaceResolver) : IGreeterService
 {
     private const int InitialYear = 2025;
 
-    public void Greet()
+    public void Execute()
     {
         var executingAssembly = Assembly.GetExecutingAssembly();
         if (executingAssembly == null)
@@ -38,14 +39,14 @@ internal sealed class GreeterService(IWorkspaceService workspaceService) : IGree
 
         AnsiConsole.WriteLine($"  Built:       {possibleBuildDate:yyyy-MM-dd HH:mm:ss}");
         AnsiConsole.WriteLine($"  Started:     {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
-        AnsiConsole.WriteLine($"  Workspace:   {workspaceService.GetWorkingDirectory()?.FullName ?? "No Workspace Found",-65}");
+        AnsiConsole.WriteLine($"  Workspace:   {workspaceResolver.GetWorkingDirectory()?.FullName ?? "No Workspace Found",-65}");
 
-        if (workspaceService.IsSolutionDirectory())
+        if (workspaceResolver.IsSolutionDirectory())
         {
             AnsiConsole.WriteLine($"  Type:        Solution");
         }
 
-        if (workspaceService.IsProjectDirectory())
+        if (workspaceResolver.IsProjectDirectory())
         {
             AnsiConsole.WriteLine($"  Type:        Project");
         }
