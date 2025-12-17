@@ -1,16 +1,13 @@
 ﻿using DotNetUltra.Pipelines.Abstractions;
 using Spectre.Console.Cli;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DotNetUltra.Commands;
 
-internal sealed class BuildCleanCommand(IBuildCleanPipeline buildCleanPipeline) : Command
+internal sealed class BuildCompileCommand(IBuildCompilePipeline buildBuildPipeline) : Command
 {
     public override int Execute(CommandContext context, CancellationToken cancellationToken)
     {
-        buildCleanPipeline.Execute();
+        buildBuildPipeline.Execute();
         return 0;
     }
 }

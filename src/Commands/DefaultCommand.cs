@@ -11,7 +11,7 @@ internal sealed class DefaultCommand(IGreeterService greeter) : Command
 {
     public override int Execute(CommandContext context, CancellationToken cancellationToken)
     {
-        greeter.Greet();
+        greeter.Execute();
         return 0;
     }
 }

@@ -4,6 +4,7 @@ using System.Text;
 
 namespace DotNetUltra.Services.Abstractions;
 
-internal interface IGreeterService : IExecutorService
+internal interface IExecutorService
 {
+    void Execute();
 }
