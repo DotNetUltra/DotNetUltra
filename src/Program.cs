@@ -1,9 +1,11 @@
-﻿namespace DotNetUltra;
+﻿using Spectre.Console;
+
+namespace DotNetUltra;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        AnsiConsole.Markup("[underline red]Hello[/] World!");
     }
 }
