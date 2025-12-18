@@ -1,9 +1,9 @@
 ﻿using DotNetUltra.Pipelines.Abstractions;
 using Spectre.Console.Cli;
 
-namespace DotNetUltra.Commands;
+namespace DotNetUltra.Commands.BuildCommands;
 
-internal sealed class BuildFullCommand(IBuildFullPipeline buildBuildPipeline) : Command
+internal sealed class BuildCompileCommand(IBuildCompilePipeline buildBuildPipeline) : Command
 {
     public override int Execute(CommandContext context, CancellationToken cancellationToken)
     {

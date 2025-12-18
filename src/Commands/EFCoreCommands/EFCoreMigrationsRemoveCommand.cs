@@ -1,11 +1,8 @@
 ﻿using Spectre.Console.Cli;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DotNetUltra.Commands;
+namespace DotNetUltra.Commands.EFCoreCommands;
 
-internal sealed class BuildCommand() : Command
+internal sealed class EFCoreMigrationsRemoveCommand() : Command
 {
     public override int Execute(CommandContext context, CancellationToken cancellationToken)
     {

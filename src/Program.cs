@@ -1,4 +1,6 @@
 ﻿using DotNetUltra.Commands;
+using DotNetUltra.Commands.BuildCommands;
+using DotNetUltra.Commands.EFCoreCommands;
 using DotNetUltra.Hosting;
 using DotNetUltra.Hosting.Extensions;
 using DotNetUltra.Pipelines;
@@ -34,6 +36,15 @@ class Program
                 add.AddCommand<BuildCleanCommand>("clean");
                 add.AddCommand<BuildCleanCommand>("restore");
                 add.AddCommand<BuildFullCommand>("full");
+            });
+
+            config.AddBranch("efcore", add =>
+            {
+                add.AddBranch("migrations", addToEFCoreMigrations =>
+                {
+                    addToEFCoreMigrations.AddCommand<EFCoreMigrationsAddCommand>("add");
+                    addToEFCoreMigrations.AddCommand<EFCoreMigrationsRemoveCommand>("remove");
+                });
             });
         });
 

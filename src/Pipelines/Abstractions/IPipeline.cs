@@ -8,3 +8,9 @@ internal interface IPipeline
 {
     void Execute();
 }
+
+internal interface IPipeline<TPipelineExecuteInput>
+    where TPipelineExecuteInput : class
+{
+    void Execute(TPipelineExecuteInput input);
+}

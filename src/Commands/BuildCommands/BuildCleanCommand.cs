@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DotNetUltra.Commands;
+namespace DotNetUltra.Commands.BuildCommands;
 
 internal sealed class BuildCleanCommand(IBuildCleanPipeline buildCleanPipeline) : Command
 {

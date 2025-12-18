@@ -1,13 +1,13 @@
 ﻿using DotNetUltra.Pipelines.Abstractions;
 using Spectre.Console.Cli;
 
-namespace DotNetUltra.Commands;
+namespace DotNetUltra.Commands.BuildCommands;
 
-internal sealed class BuildCompileCommand(IBuildCompilePipeline buildBuildPipeline) : Command
+internal sealed class BuildRestoreCommand(IBuildRestorePipeline buildRestoreipeline) : Command
 {
     public override int Execute(CommandContext context, CancellationToken cancellationToken)
     {
-        buildBuildPipeline.Execute();
+        buildRestoreipeline.Execute();
         return 0;
     }
 }
